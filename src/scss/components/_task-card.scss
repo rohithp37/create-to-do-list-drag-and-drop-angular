@@ -1,0 +1,26 @@
+.card-container {
+    h4 {
+        font-weight: bold;
+    }
+
+    span {
+        border: 5px;
+        border-radius: 8px;
+        padding: 3px 7px;
+        letter-spacing: 1px;
+        font-size: 80%;
+        color: #fff;
+    }
+
+    .critical {
+        background-color: red;
+    }
+
+    .high {
+        background-color: #cd8a0a;
+    }
+
+    .average {
+        background-color: blue;
+    }
+}

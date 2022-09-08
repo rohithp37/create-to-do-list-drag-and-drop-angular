@@ -1,0 +1,30 @@
+<form [formGroup]="form">
+
+
+    <mat-form-field appearance="outline">
+        <mat-label>Task Title</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="title">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Task Description</mat-label>
+        <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="2"
+            cdkAutosizeMaxRows="5" formControlName="description"></textarea>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Task Priority</mat-label>
+        <mat-select formControlName="priority">
+            <mat-option>--</mat-option>
+            <mat-option *ngFor="let priority of priorityList" [value]="priority">
+                {{priority}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+</form>
+
+<div class="buttons">
+    <button mat-stroked-button (click)="goToDashboard()">Cancel</button>
+    <button mat-raised-button color="primary" [disabled]="!form.valid" (click)="submit()">Submit</button>
+</div>

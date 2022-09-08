@@ -1,0 +1,22 @@
+
+.form-wrapper {
+    max-width: 500px;
+    margin: auto;
+    background-color: #f5f9f9;
+    border-radius: 10px;
+    padding: 20px;
+
+    mat-form-field {
+        width: 100%;
+    }
+
+    .buttons{
+        text-align: right;
+        display: inline-block;
+        width: 100%;
+        button {
+            margin-left:10px;
+        }
+    }
+
+}

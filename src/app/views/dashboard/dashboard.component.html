@@ -1,0 +1,45 @@
+<div class="wrapper" >
+    <div cdkDropListGroup class="dashboard-wrapper">
+        <div class="example-container">
+            <h2>To do</h2>
+
+            <button mat-button (click)="addNewTask()">
+                <mat-icon>add</mat-icon>
+            </button>
+            
+            <div cdkDropList [cdkDropListData]="todo" class="example-list" (cdkDropListDropped)="drop($event)">
+                <div class="example-box" *ngFor="let item of todo" cdkDrag style="background-color: #fff; padding: 20px 10px; border-radius: 10px;">
+                    <task-card [task]="item"></task-card>
+                </div>
+            </div>
+        </div>
+
+        <div class="example-container">
+            <h2>In Progress</h2>
+
+            <button mat-button>
+                <mat-icon>add</mat-icon>
+            </button>
+
+            <div cdkDropList [cdkDropListData]="progress" class="example-list" (cdkDropListDropped)="drop($event)">
+                <div class="example-box" *ngFor="let item of progress" cdkDrag style="background-color: #fff; padding: 20px 10px; border-radius: 10px;">
+                    <task-card [task]="item"></task-card>
+                </div>
+            </div>
+        </div>
+
+        <div class="example-container">
+            <h2>Completed</h2>
+
+            <button mat-button>
+                <mat-icon>add</mat-icon>
+            </button>
+
+            <div cdkDropList [cdkDropListData]="completed" class="example-list" (cdkDropListDropped)="drop($event)">
+                <div class="example-box" *ngFor="let item of completed" cdkDrag style="background-color: #fff; padding: 20px 10px; border-radius: 10px;">
+                    <task-card [task]="item"></task-card>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
